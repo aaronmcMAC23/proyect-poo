@@ -54,21 +54,6 @@ public class PruebaPlaneta {
         tierraMagneticField = Double.parseDouble(JOptionPane.showInputDialog(null, "Campo magnético:"));
         tierra.setMagneticField(tierraMagneticField);
 
-        //Mostrar características de la Tierra
-        String tierraInfo = "Tierra:\n" +
-                "\nTamaño: " + tierra.getSize() + "\n";
-
-        for(int i = 0; i < tierra.getPosition().length; i++) {
-            tierraInfo += "Posición [" + (i+1) + "]: " + tierra.getPosition()[i] + "\n";
-        }
-
-        tierraInfo += "Tipo de órbita: " + tierra.getOrbit() +
-                      "\nColor: " + tierra.getColor() +
-                      "\nNúmero de anillos: " + tierra.getnRings() +
-                      "\nComposición química: " + tierra.getChemicalComp() +
-                      "\nAtmósfera: " + tierra.getAthmosphere() +
-                      "\nCampo magnético: " + tierra.getMagneticField();
-
-        JOptionPane.showMessageDialog(null, tierraInfo);
+        JOptionPane.showMessageDialog(null, tierra.showInfo(), "Tierra", 1);
     }
 }

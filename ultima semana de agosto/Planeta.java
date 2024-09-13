@@ -1,15 +1,16 @@
+
 public class Planeta {
     private double size;
     private double[] position;
-    private String orbit;
+    private String orbit;                                     
     private String color;
     private int nRings;
     private String chemicalComp;
     private boolean athmosphere;
-    private Double magneticField;
+    private Double magneticField;               
 
     public void setSize(double size) {
-        this.size = size;
+        this.size       = size;
     }
 
     public double getSize() {
@@ -71,6 +72,21 @@ public class Planeta {
 
     public Double getMagneticField() {
         return magneticField;
+    }
+
+    public String showInfo() {
+        String positions = "";
+        for(int i = 0; i < position.length; i++) {
+            positions += "Posición " + (i+1) + ": " + position[i] + "\n";
+        }
+
+        return "Tipo de órbita: " + orbit +
+               "\n" + positions +
+               "Color: " + color +
+               "\nNúmero de anillos: " + nRings +
+               "\nComposición química: " + chemicalComp +
+               "\nAtmósfera: " + athmosphere +
+               "\nCampo magnético: " + magneticField;
     }
 }
 

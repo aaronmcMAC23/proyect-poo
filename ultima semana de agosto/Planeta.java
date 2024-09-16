@@ -1,36 +1,35 @@
-
 public class Planeta {
-    private double size;
-    private double[] position;
-    private String orbit;                                     
-    private String color;
-    private int nRings;
-    private String chemicalComp;
-    private boolean athmosphere;
-    private Double magneticField;               
+    private double tamaño; // tamaño
+    private float[] posicion; // posiciones
+    private String orbita;  // órbita                          
+    private String color; // color
+    private int numeroAnillos; // número de anillos 
+    private String composicionQuimica; // composición química
+    private boolean atmosfera; // atmósfera
+    private double campoMagnetico =-1;  // campo magnético             
 
-    public void setSize(double size) {
-        this.size       = size;
+    public void setTamaño(double tamaño) {
+        this.tamaño = tamaño;
     }
 
-    public double getSize() {
-        return size;
+    public double getTamaño() {
+        return tamaño;
     }
 
-    public void setPosition(double[] position) {
-        this.position = position;
+    public void setPosicion(float[] posicion) {
+        this.posicion = posicion;
     }
 
-    public double[] getPosition() {
-        return position;
+    public float[] getPosicion() {
+        return posicion;
     }
 
-    public void setOrbit(String orbit) {
-        this.orbit = orbit;
+    public void setOrbita(String orbita) {
+        this.orbita = orbita;
     }
 
-    public String getOrbit() {
-        return orbit;
+    public String getOrbita() {
+        return orbita;
     }
 
     public void setColor(String color) {
@@ -41,52 +40,51 @@ public class Planeta {
         return color;
     }
 
-    public void setnRings(int nRings) {
-        this.nRings = nRings;
+    public void setNumeroAnillos(int numeroAnillos) {
+        this.numeroAnillos = numeroAnillos;
     }
 
-    public int getnRings() {
-        return nRings;
+    public int getNumeroAnillos() {
+        return numeroAnillos;
     }
 
-    public void setChemicalComp(String chemicalComp) {
-        this.chemicalComp = chemicalComp;
+    public void setComposicionQuimica(String composicionQuimica) {
+        this.composicionQuimica = composicionQuimica;
     }
 
-    public String getChemicalComp() {
-        return chemicalComp;
+    public String getComposicionQuimica() {
+        return composicionQuimica;
     }
 
-    public void setAthmosphere(int athmosphere) {
-        this.athmosphere = athmosphere == 1;
+    public void setAtmosfera(boolean atmosfera) {
+        this.atmosfera = atmosfera;
     }
 
-    public String getAthmosphere() {
-        if(athmosphere) return "Sí.";
-        else return "No.";
+    public boolean getAtmosfera() {
+        return atmosfera;
     }
 
-    public void setMagneticField(Double magneticField) {
-        this.magneticField = magneticField;
+    public void setCampoMagnetico(Double campoMagnetico) {
+        this.campoMagnetico = campoMagnetico;
     }
 
-    public Double getMagneticField() {
-        return magneticField;
+    public Double getCampoMagnetico() {
+        return campoMagnetico;
     }
 
-    public String showInfo() {
-        String positions = "";
-        for(int i = 0; i < position.length; i++) {
-            positions += "Posición " + (i+1) + ": " + position[i] + "\n";
+    public String mostrarInfo() {
+        String posiciones = "";
+        for(int i = 0; i < posicion.length; i++) {
+            posiciones += "Posición " + (i+1) + ": " + posicion[i] + "\n";
         }
 
-        return "Tipo de órbita: " + orbit +
-               "\n" + positions +
+        return "Tipo de órbita: " + orbita +
+               "\n" + posiciones +
                "Color: " + color +
-               "\nNúmero de anillos: " + nRings +
-               "\nComposición química: " + chemicalComp +
-               "\nAtmósfera: " + athmosphere +
-               "\nCampo magnético: " + magneticField;
+               "\nNúmero de anillos: " + numeroAnillos +
+               "\nComposición química: " + composicionQuimica +
+               "\nAtmósfera: " + atmosfera +
+               "\nCampo magnético: " + campoMagnetico;
     }
 }
 

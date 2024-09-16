@@ -1,59 +1,58 @@
-
 import javax.swing.*;
 
 public class PruebaPlaneta {
     public static void main(String[] args) {
-        double tierraSize;
-        double[] tierraPosition = null;
-        int numPostions;
-        double positionValue;
-        String tierraOrbit;
-        String tierraColor;
-        int tierraNRings;
-        String tierraChemicalComp;
-        int tierraAthmosphere;
-        Double tierraMagneticField;
+        double tamañoTierra;
+        Double[] posicionTierra = null;
+        int numPosiciones;
+        double valorPosicion;
+        String orbitaTierra;
+        String colorTierra;
+        int numeroAnillosTierra;
+        String composicionQuimicaTierra;
+        int atmosferaTierra;
+        Double campoMagneticoTierra;
         Planeta tierra = new Planeta();
 
-
         JOptionPane.showMessageDialog(null, "Ingrese los datos solicitados para el planeta Tierra.");
-        // Tamaño Tierra
-        tierraSize = Double.parseDouble(JOptionPane.showInputDialog(null, "Tamaño:"));
-        tierra.setSize(tierraSize);
+        
+        // Tamaño de la Tierra
+        tamañoTierra = Double.parseDouble(JOptionPane.showInputDialog(null, "Tamaño:"));
+        tierra.setTamaño(tamañoTierra);
 
-        // Posición Tierra
-        numPostions = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el número de posiciones:"));
-        tierra.setPosition(new double[numPostions]);
+        // Posición de la Tierra
+        numPosiciones = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el número de posiciones:"));
+        tierra.setPosicion(new float[numPosiciones]);
 
-        for(int i = 0; i < tierra.getPosition().length; i++) {
-            positionValue = Double.parseDouble(JOptionPane.showInputDialog(null,"Valor de la posición " + (i+1) + ": "));
-            tierra.getPosition()[i] = positionValue;
+        for(int i = 0; i < tierra.getPosicion().length; i++) {
+            valorPosicion = Float.parseFloat(JOptionPane.showInputDialog(null,"Valor de la posición " + (i+1) + ": "));
+            tierra.getPosicion()[i] = 0;
         }
 
-        // Órbita Tierraf
-        tierraOrbit = JOptionPane.showInputDialog("Tipo de órbita:");
-        tierra.setOrbit(tierraOrbit);
+        // Órbita de la Tierra
+        orbitaTierra = JOptionPane.showInputDialog("Tipo de órbita:");
+        tierra.setOrbita(orbitaTierra);
 
-        // Color Tierra
-        tierraColor = JOptionPane.showInputDialog("Color:");
-        tierra.setColor(tierraColor);
+        // Color de la Tierra
+        colorTierra = JOptionPane.showInputDialog("Color:");
+        tierra.setColor(colorTierra);
 
-        // No. anillos Tierra
-        tierraNRings = Integer.parseInt(JOptionPane.showInputDialog(null, "Número de anillos:"));
-        tierra.setnRings(tierraNRings);
+        // Número de anillos de la Tierra
+        numeroAnillosTierra = Integer.parseInt(JOptionPane.showInputDialog(null, "Número de anillos:"));
+        tierra.setNumeroAnillos(numeroAnillosTierra);
 
-        // Comp. química Tierra
-        tierraChemicalComp = JOptionPane.showInputDialog(null, "Composición química:");
-        tierra.setChemicalComp(tierraChemicalComp);
+        // Composición química de la Tierra
+        composicionQuimicaTierra = JOptionPane.showInputDialog(null, "Composición química:");
+        tierra.setComposicionQuimica(composicionQuimicaTierra);
 
-        // Atmósfera Tierra
-        tierraAthmosphere = Integer.parseInt(JOptionPane.showInputDialog(null, "Tiene atmósfera\n0)No 1)Sí:"));
-        tierra.setAthmosphere(tierraAthmosphere);
+        // Atmósfera de la Tierra
+        atmosferaTierra = Integer.parseInt(JOptionPane.showInputDialog(null, "Tiene atmósfera\n0)No 1)Sí:"));
+        tierra.setAtmosfera(atmosferaTierra);
 
-        // Campo magnético Tierra
-        tierraMagneticField = Double.parseDouble(JOptionPane.showInputDialog(null, "Campo magnético:"));
-        tierra.setMagneticField(tierraMagneticField);
+        // Campo magnético de la Tierra
+        campoMagneticoTierra = Double.parseDouble(JOptionPane.showInputDialog(null, "Campo magnético:"));
+        tierra.setCampoMagnetico(campoMagneticoTierra);
 
-        JOptionPane.showMessageDialog(null, tierra.showInfo(), "Tierra", 1);
+        JOptionPane.showMessageDialog(null, tierra.mostrarInfo(), "Tierra", 1);
     }
 }

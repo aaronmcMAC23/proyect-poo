@@ -2,6 +2,11 @@
 import javax.swing.JOptionPane;
 
 public class ClassMenu {
+    static Planeta pl;
+    static Edificio defif;
+    static Carrera carrera;
+    static Facultad facultades;
+    static Automovil autom;
     public static void main(String[] args) {
         menu();
 
@@ -37,6 +42,8 @@ public static void submenu1(){
         switch(opcion2){
             case "1":
                 JOptionPane.showMessageDialog(null,"Creando aobjeto planeta");
+                pl = new Planeta();
+                llenarPlaneta();
                 break;
             case "2":
                 JOptionPane.showMessageDialog(null,"Creando objeto automóvil");
@@ -89,4 +96,69 @@ public static void submenu2(){
         }
     }while(!opcion2.equals("6"));
 }
+public static void llenarPlaneta() {
+    String ent = "";
+    float n = 0.0f;
+    int ni = 0;
+
+    // Solicitar tamaño del planeta
+    ent = JOptionPane.showInputDialog("Ingrese el tamaño del planeta: ");
+    n = Float.parseFloat(ent);
+    pl.setTamaño(n);
+
+    // Solicitar la posición
+    ent = JOptionPane.showInputDialog("Ingrese el número de posiciones: ");
+    ni = Integer.parseInt(ent);
+    pl.setPosicion(new float[ni]);
+
+    // Llenar posiciones del planeta
+    for (int i = 0; i < pl.getPosicion().length; i++) {
+        ent = JOptionPane.showInputDialog("Ingrese el valor de la posición " + (i + 1) + ": ");
+        n = Float.parseFloat(ent);
+        pl.getPosicion()[i] = n;
+    }
+
+    // Solicitar si tiene atmósfera
+    ent = JOptionPane.showInputDialog("¿Tiene atmósfera? (si/no)");
+    boolean tieneAtm = ent.equalsIgnoreCase("si");
+    pl.setAtmosfera(tieneAtm);
+
+    // Solicitar el color del planeta
+    ent = JOptionPane.showInputDialog("Ingrese el color del planeta: ");
+    pl.setColor(ent);
+
+    // Solicitar número de anillos
+    ent = JOptionPane.showInputDialog("Ingrese el número de anillos del planeta: ");
+    ni = Integer.parseInt(ent);
+    pl.setNumeroAnillos(ni);
+
+    // Solicitar composición química
+    ent = JOptionPane.showInputDialog("Ingrese la composición química del planeta: ");
+    pl.setComposicionQuimica(ent);
+
+    // Solicitar campo magnético (opcional)
+    ent = JOptionPane.showInputDialog("Ingrese el valor del campo magnético del planeta (deje en blanco si no aplica): ");
+    if (ent.isEmpty()) {
+        pl.setCampoMagnetico(null);
+    } else {
+        double campoMagnetico = Double.parseDouble(ent);
+        pl.setCampoMagnetico(campoMagnetico);
+    }
+    // Mostrar mensaje de confirmación
+    JOptionPane.showMessageDialog(null, "El planeta ha sido creado exitosamente.");
 }
+
+        
+public static void llenarCarrera(){
+    JOptionPane.showInputDialog("Cual es su titulo:");
+}
+public static void llenarAutomovil(){
+
+}
+public static void llenarEdificio(){
+
+}
+public static void llenarFacultad(){
+
+}
+} // end class

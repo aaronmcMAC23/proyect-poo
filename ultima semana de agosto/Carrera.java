@@ -2,7 +2,7 @@ public class Carrera {
     private String titulo;
     private String [] materias;
     private int area;
-    private int[] clavesPlanes;
+    private int clavesPlanes;
     private String especialidades;
     private String[]requisitosIngreso;
     private String[] opcionesTitulacion;
@@ -33,11 +33,11 @@ public class Carrera {
         return area;
     }
 
-    public void setClavesPlanes(int[] clavesPlanes) {
+    public void setClavesPlanes(int clavesPlanes) {
         this.clavesPlanes = clavesPlanes;
     }
     
-    public int[] getClavesPlanes() {
+    public int getClavesPlanes() {
         return clavesPlanes;
     }
 
@@ -71,5 +71,30 @@ public class Carrera {
 
     public int getDuracion() {
         return duracion;
+    }
+    public String mostrarInfoC() {
+        String materiasStr = "";
+    for (int i = 0; i < materias.length; i++) {
+        materiasStr += "Materia " + (i + 1) + ": " + materias[i] + "\n";
+    }
+
+    String requisitosStr = "";
+    for (int i = 0; i < requisitosIngreso.length; i++) {
+        requisitosStr += "Requisito " + (i + 1) + ": " + requisitosIngreso[i] + "\n";
+    }
+
+    String opcionesStr = "";
+    for (int i = 0; i < opcionesTitulacion.length; i++) {
+        opcionesStr += "Opción de titulación " + (i + 1) + ": " + opcionesTitulacion[i] + "\n";
+    }
+
+    return "Nombre de la carrera: " + titulo +
+           "\nÁrea de la carrera: " + area +
+           "\nClaves de planes de estudio: " + clavesPlanes +
+           "\nEspecialidades: " + especialidades +
+           "\nMaterias:\n" + materiasStr +
+           "\nRequisitos de ingreso:\n" + requisitosStr +
+           "\nOpciones de titulación:\n" + opcionesStr +
+           "\nDuración: " + duracion + " años";
     }
 }

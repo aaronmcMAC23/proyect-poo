@@ -62,4 +62,13 @@ public class Facultad {
     public float getAreaTerreno(){
         return areaTerreno;
     }
+    public String mostrarInfoF() {
+        return "Carreras: " + carreras +
+               "\nUbicación: " + ubicacion +
+               "\nAfiliación: " + afiliacion +
+               "\nNúmero de estudiantes: " + noEstudiantes +
+               "\nNúmero de edificios: " + noEdificios +
+               "\nAño de inauguración: " + anioInaguracion +
+               "\nÁrea del terreno: " + areaTerreno + " hectáreas";
+    }
 }

@@ -80,5 +80,20 @@ public class Edificio {
     public String getEstadoObra() {
         return estadoObra;
     }
+    public String mostrarInfoE() {
+        String coloresInfo = "";
+        for (int i = 0; i < colores.length; i++) {
+            coloresInfo += "Color " + (i + 1) + ": " + colores[i] + "\n";
+        }
     
+        return "Materiales: " + materiales +
+               "\nNúmero de pisos: " + noPisos +
+               "\nColores:\n" + coloresInfo +
+               "Ubicación: " + ubicacion +
+               "\nDiseño: " + diseño +
+               "\nEstilo: " + estilo +
+               "\nUso: " + uso +
+               "\nAntigüedad: " + antiguedad +
+               "\nEstado de la obra: " + estadoObra;
+    }
 }

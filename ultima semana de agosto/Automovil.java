@@ -73,6 +73,15 @@ public class Automovil {
     public String getModelo() {
         return modelo;
     }
-    
+    public String mostrarinfoA(){
+        return "Tamaño: " + tamanio +
+        "\nCondición: " + condicion +
+        "\nPrecio: $" + precio +
+        "\nColor: " + color +
+        "\nApariencia (1-10): " + apariencia +
+        "\nMarca: " + marca +
+        "\nTracción: " + traccion +
+        "\nModelo: " + modelo;
+    }
     
 }
